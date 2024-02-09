@@ -1,0 +1,15 @@
+node_modules
+.env
+context/Center.js
+context/List.js
+context/Rating.js
+context/Type.js
+Components/Filters.jsx
+Components/FriendList.jsx
+Components/Map1.jsx
+Components/PlaceDetails.jsx
+Components/PlaceList.jsx
+Components/Search.jsx
+Components/Spinner.jsx
+Components/UpdateLocation.jsx
+screens
