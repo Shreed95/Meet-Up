@@ -48,22 +48,23 @@ const Home = () => {
     return (
         <>
             <Nav />
-            <div>
-                <div className='bg-[#d8e3f2] flex flex-col md:flex-col justify-center items-center'>
+            <div className='' style={{backgroundImage: "url('https://i.postimg.cc/qB2F2VKh/back-new.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover'} } >
+                <div  className=' flex flex-col md:flex-col justify-center items-center'>
                     <div className="w-full mt-16">
                         <Filters />
                     </div>
                     <div className='w-full'>
                         <FriendList />
                     </div>
-                </div>
-                <div className='flex justify-center items-center bg-[#d8e3f2] pt-12 pb-24'>
+               
+                <div className='flex justify-center items-center pt-12 pb-24'>
                     <button
                         type='button'
                         className='bg-[#395886] text-white py-2 px-11 rounded hover:bg-[#4b73ab]  focus:outline-none focus:shadow-outline-blue text-center'
                         onClick={Algo}>
                         Find Places
                     </button>
+                </div>
                 </div>
             </div>
         </>
