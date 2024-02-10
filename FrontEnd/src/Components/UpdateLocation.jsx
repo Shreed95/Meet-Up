@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthContext } from '../hooks/useAuthContext';
 
 function UpdateLocation() {
     const { user } = useAuthContext();
+    const [ans, setAns] = useState(false);
     const getLocation = () => {
         return new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(
@@ -41,19 +42,29 @@ function UpdateLocation() {
             if (!response.ok) {
                 throw new Error(`Update location failed: ${response.statusText}`);
             }
-
-            // const data = await response.json();
-            // console.log('Update location response:', data);
+            else{
+                
+                setAns(true);
+            }
         } catch (error) {
             console.log('Error updating location:', error);
         }
     };
 
     return (
-        <button className='text-white text-xl px-3 py-2 bg-yellow-400 mt-10 rounded-xl'
-            onClick={updateLocation}>
-            Update Location
-        </button>
+        <>
+            {ans ? (
+                <button className='text-white py-2 px-11 rounded bg-green-600  focus:outline-none focus:shadow-outline-blue text-center mt-12'
+                    onClick={updateLocation}>
+                    Location Updated
+                </button>
+            ) : (
+                <button className=' text-white py-2 px-11 rounded hover:bg-[#4b73ab] bg-[#395886] focus:outline-none focus:shadow-outline-blue text-center mt-12'
+                    onClick={updateLocation}>
+                    Update Location
+                </button>
+            )}
+        </>
     );
 }
 

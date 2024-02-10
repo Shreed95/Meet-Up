@@ -98,11 +98,11 @@ const Map = ({ coordinates, setPlaces }) => {
     }, [coordinates]);
 
     return (
-        <div style={{ position: 'relative' }}>
-            <div className='bg-gray-400 bg-opacity-50 text-gray-700 p-1 font-mono z-10 absolute left-0 m-2 rounded-md w-auto md:w-[400px] font-bold'>
+        <div style={{ position: 'relative' }} className='p-8 bg-[#bfcee5]'>
+            <div className='bg-[#E0CCBE]  bg-opacity-50 text-gray-700 p-4 font-mono z-10 absolute left-0 m-6  rounded-md w-auto md:w-[400px] font-bold'>
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
             </div>
-            <div className='md:h-screen h-[370px]' style={{ position: 'relative' }} ref={mapContainerRef}>
+            <div className='md:h-screen h-[370px] ' style={{ position: 'relative' }} ref={mapContainerRef}>
                 <div className='bg-gray-400 bg-opacity-50 font-mono z-10 absolute bottom-0 right-0 m-2 mb-16 rounded-md w-auto'>
                     <ul className="w-auto p-0 md:p-2 text-gray-700 font-bold text-sm md:text-lg">
                         <li className="flex items-center">

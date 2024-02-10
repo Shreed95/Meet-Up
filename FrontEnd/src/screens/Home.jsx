@@ -49,18 +49,18 @@ const Home = () => {
         <>
             <Nav />
             <div>
-                <div className='bg-slate-900 flex flex-col md:flex-row justify-center items-center'>
-                    <div className="w-[30%]">
+                <div className='bg-[#bfcee5] flex flex-col md:flex-col justify-center items-center'>
+                    <div className="w-full mt-16">
                         <Filters />
                     </div>
-                    <div className='w-[70%]'>
+                    <div className='w-full'>
                         <FriendList />
                     </div>
                 </div>
-                <div className='flex justify-center items-center bg-slate-900 pt-12 pb-24'>
+                <div className='flex justify-center items-center bg-[#bfcee5]   pt-12 pb-24'>
                     <button
                         type='button'
-                        className='bg-blue-500 text-white py-2 px-11 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue text-center'
+                        className='bg-[#395886] text-white py-2 px-11 rounded hover:bg-[#4b73ab]  focus:outline-none focus:shadow-outline-blue text-center'
                         onClick={Algo}>
                         Find Places
                     </button>

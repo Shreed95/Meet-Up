@@ -66,8 +66,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-200">
-      <div className="bg-white/20 backdrop-blur-5 border border-white/30 p-8 rounded shadow-md flex flex-col justify-center items-center w-96">
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="bg-slate-100 backdrop-blur-5 border border-white/30 p-8 rounded shadow-md flex flex-col justify-center items-center w-96">
         <img src={logo} alt="logo" className="w-14 text-center mb-6" />
         <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit} className='w-full'>
@@ -133,7 +133,7 @@ const SignUp = () => {
             Sign Up
           </button>
           <div className='mt-3'>
-            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-light text-gray-900 ">
               Already have an Account ? <Link to='/login' className="font-medium text-blue-700 hover:underline">Log In</Link>
             </p>
           </div>

@@ -94,12 +94,12 @@ function FriendList() {
         <>
 
             <div className='flex flex-col items-center'>
-                <p className='mt-16 text-3xl font-bold font-mono text-white'>Make a Friend List</p>
+                <p className='mt-16 text-3xl font-bold text-black'>Make a Friend List</p>
                 <Search setonSelect={setonSelect} />
                 <div className="">
                     <table className="w-auto border border-gray-300 mt-5 mb-5">
                         <thead>
-                            <tr className='bg-orange-200'>
+                            <tr className='bg-yellow-200'>
                                 <th className="py-2 px-4 sm:px-9 lg:px-16 border-b">Name</th>
                                 <th className="py-2 px-4 sm:px-9 lg:px-16 border-b">Address</th>
                             </tr>

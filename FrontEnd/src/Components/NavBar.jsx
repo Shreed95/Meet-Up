@@ -17,7 +17,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="bg-gray-300 p-2 sticky top-0 z-50">
+    <nav className="bg-[#D5DEEF] p-2 sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-center md:justify-between">
         <Link to='/home' className="flex flex-col md:flex-row justify-center items-center">
           <img src={logo} alt="logo" className='pl-4 w-[40px] md:w-[50px] pb-2 md:pb-0' />

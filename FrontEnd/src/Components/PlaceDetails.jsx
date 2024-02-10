@@ -5,7 +5,7 @@ import temp from '../Images/temp.png';
 
 const PlaceDetails = ({ place }) => {
   return (
-    <div className="max-w-md mx-auto bg-white shadow-md overflow-hidden">
+    <div className="max-w-md mx-auto bg-white  shadow-md overflow-hidden">
       <img
         className="h-48 w-full object-cover"
         src={place.photo ? place.photo.images.large.url : temp}

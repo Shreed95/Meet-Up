@@ -23,8 +23,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-200">
-      <div className="bg-white/20
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="bg-slate-100
 rounded-lg shadow-md backdrop-blur-5 border border-white/30 p-8  w-96 flex flex-col justify-center items-center">
         <img src={logo} alt="logo" className='w-14 text-center mb-6' />
         <h2 className="text-2xl font-semibold mb-4">Log In</h2>
@@ -72,7 +72,7 @@ rounded-lg shadow-md backdrop-blur-5 border border-white/30 p-8  w-96 flex flex-
             </div>
           }
           <div className='mt-3'>
-            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-light text-gray-900 ">
               Don’t have an account yet? <Link to='/' className="font-medium text-blue-700 hover:underline">Sign up</Link>
             </p>
           </div>
