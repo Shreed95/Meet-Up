@@ -1,7 +1,4 @@
-
-[![light-3.png](https://i.postimg.cc/j2GBJp7t/light-3.png)](https://postimg.cc/wRQwCb2G)
-
-
+[![NEW-FINAL-LOGO.png](https://i.postimg.cc/BvfHm7w7/NEW-FINAL-LOGO.png)](https://postimg.cc/JsKsnx8j)
 
 
 ## Description
@@ -21,26 +18,37 @@ Users can easily create friend groups by inputting their respective locations. T
 ### 4.	User-Friendly Interface:
  Website provides a user-friendly interface, making it easy for users to navigate through features, create friend groups, and plan events effortlessly, rate restaurants. The design prioritizes simplicity and accessibility for a seamless user experience.
 
-
-
-
-
 ## API Reference
 
-MapBox, Travel Advisor\
+Map APIs - Mapbox GL
 https://docs.mapbox.com/api/overview/
+Places APIs - Rapid APIs Travel advior
+https://rapidapi.com/apidojo/api/travel-advisor
 
+## Problem it solves:
+•	Meetup, steps in as the ultimate problem solver. Traditional methods of selecting a meetup location often involve lengthy discussions, compromising on preferences, lack of knowledge about places present in city and dealing with the inconvenience of finding a central point for everyone. 
+
+•	Our website will give proper suggestions of restaurants, attractions and hotels to the user where they can hangout with their friends.
+
+•	Our website streamlines the process of organizing gatherings by allowing friends to effortlessly create groups, share their locations, and dynamically compute an ideal central meetup point.
+
+•	Say goodbye to the complexities of planning and welcome a hassle-free way to enhance your social gatherings.
 
 
 
 ## Screenshots
+[![website-ss.jpg](https://i.postimg.cc/RhTZ6JzM/website-ss.jpg)](https://postimg.cc/1VfQbttT)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
+## Show Stoppers
+•	Algorithm – Its not always possible that center point of location will show some places as sometime no places are present near center point.
+
+•	APIs – We are using Travel Advisor APIs which is outdated so it shows less places, google APIs is more detailed but its paid so we can’t use it.
 
 ## Tech Stack
 
-**Languages:** React, Redux, TailwindCSS, Javascript
+Node.js , Express.js , React.js , MongoDB , Tailwind CSS, Mapbox-GL
 
-**Server:** Mongo db
+
+
 
