@@ -37,7 +37,7 @@ https://rapidapi.com/apidojo/api/travel-advisor
 
 
 ## Screenshots
-[![website-ss.jpg](https://i.postimg.cc/RhTZ6JzM/website-ss.jpg)](https://postimg.cc/1VfQbttT)
+[![Whats-App-Image-2024-02-10-at-18-26-44-07e7e41f.jpg](https://i.postimg.cc/pTH5NNf4/Whats-App-Image-2024-02-10-at-18-26-44-07e7e41f.jpg)](https://postimg.cc/QBfd5ynJ)
 
 
 ## Show Stoppers
@@ -48,6 +48,49 @@ https://rapidapi.com/apidojo/api/travel-advisor
 ## Tech Stack
 
 Node.js , Express.js , React.js , MongoDB , Tailwind CSS, Mapbox-GL
+
+
+## Deployment
+
+To deploy this project run these commands on terminal
+
+### For FrontEnd
+
+```bash
+  cd ./FrontEnd
+```
+```bash
+  npm install
+```
+```bash
+  npm run start
+```
+
+### For BackEnd
+
+```bash
+  cd ./BackEnd
+```
+```bash
+  npm install
+```
+```bash
+  npm start
+```
+
+## Contributors
+
+- [@Shreed95](https://github.com/Shreed95)
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shreed-raskar-646b20254)[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Shreed95) 
+- [@Ranawatharsh](https://github.com/ranawatharsh)
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harsh-ranawat-212a05278)[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ranawatharsh)
+- [@Harish0801](https://github.com/Harish0801)
+  [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harish-lohade-291705249)[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/harishlohade08)
+
+
+
+
+
 
 
 
