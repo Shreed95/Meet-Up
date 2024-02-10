@@ -42,7 +42,7 @@ function Filters() {
                 
                 
             </div>
-            <hr className='bg-blue-500 mt-8'></hr>
+            <div className='bg-white w-full h-[1px] mt-8'></div>
             <div className='flex justify-center items-center'>
                 <UpdateLocation />
             </div>
