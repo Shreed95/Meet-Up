@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
+import { useCenter } from '../context/Center';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestionsVisible, setSuggestionsVisible] = useState(false);
+  const centerState = useCenter();
 
   const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
+    const value = event.target.value;
+    setSearchTerm(value);
+    if (value === "Camp, Pune") {
+      centerState.setCenter({ lng: 18.499, lat: 73.8957 });
+    } else if (value === "Gandhinagar, Gujurat") {
+      centerState.setCenter({ lng: 23.2156, lat: 72.6369 });
+    } else if (value === "Delhi, India") {
+      centerState.setCenter({ lng: 28.7041, lat: 77.1025 });
+    }
   };
 
   const handleSearchClick = () => {
@@ -17,11 +27,11 @@ const SearchBar = () => {
     setSuggestionsVisible(false);
   };
 
-  const suggestions = ['Apple', 'Banana', 'Orange'];
+  const suggestions = ['Camp, Pune', 'Gandhinagar, Gujurat', 'Delhi, India'];
 
   return (
     <div className="relative flex flex-col justify-center">
-      <div className='my-6 text-center text-xl'>Search Places</div>
+      <div className='my-6 text-center text-xl'>Search Places <span className='text-md text-gray-300'>(Future Implementation)</span></div>
       <input
         type="text"
         className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"

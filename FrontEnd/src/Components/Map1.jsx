@@ -98,7 +98,7 @@ const Map = ({ coordinates, setPlaces }) => {
     }, [coordinates]);
 
     return (
-        <div style={{ position: 'relative' }} className='p-8 bg-[#bfcee5]'>
+        <div style={{ position: 'relative' }} className='p-8'>
             <div className='bg-[#E0CCBE]  bg-opacity-50 text-gray-700 p-4 font-mono z-10 absolute left-0 m-6  rounded-md w-auto md:w-[400px] font-bold'>
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
             </div>
