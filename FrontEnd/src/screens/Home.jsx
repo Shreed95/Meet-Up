@@ -49,7 +49,7 @@ const Home = () => {
         <>
             <Nav />
             <div>
-                <div className='bg-[#bfcee5] flex flex-col md:flex-col justify-center items-center'>
+                <div className='bg-[#d8e3f2] flex flex-col md:flex-col justify-center items-center'>
                     <div className="w-full mt-16">
                         <Filters />
                     </div>
@@ -57,7 +57,7 @@ const Home = () => {
                         <FriendList />
                     </div>
                 </div>
-                <div className='flex justify-center items-center bg-[#bfcee5]   pt-12 pb-24'>
+                <div className='flex justify-center items-center bg-[#d8e3f2] pt-12 pb-24'>
                     <button
                         type='button'
                         className='bg-[#395886] text-white py-2 px-11 rounded hover:bg-[#4b73ab]  focus:outline-none focus:shadow-outline-blue text-center'

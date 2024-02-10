@@ -16,13 +16,13 @@ const UserSchema = new Schema({
     required: true,
   },
   location: {
-    type: "object",
-    properties: {
-      lat: { type: "number" },
-      lng: { type: "number" },
+    type: {
+      lat: { type: Number },
+      lng: { type: Number },
     },
     required: true,
-  },
+  }
 });
 
-module.exports = mongoose.model("user", UserSchema);
+
+module.exports = mongoose.model("User", UserSchema);

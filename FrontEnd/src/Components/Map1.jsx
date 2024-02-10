@@ -12,7 +12,7 @@ const Map = ({ coordinates, setPlaces }) => {
     const mapContainerRef = useRef(null);
     const [lng, setLng] = useState(coordinates.lng);
     const [lat, setLat] = useState(coordinates.lat);
-    const [zoom, setZoom] = useState(16);
+    const [zoom, setZoom] = useState(15);
     const listState = useList();
     const typeState = useType();
     const ratingState = useRating();
@@ -24,7 +24,7 @@ const Map = ({ coordinates, setPlaces }) => {
             container: mapContainerRef.current,
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [coordinates.lng, coordinates.lat],
-            zoom: 16
+            zoom: 15
         });
         new mapboxgl.Marker({ color: '#FFD700' }).setLngLat([coordinates.lng, coordinates.lat]).addTo(map);
 
