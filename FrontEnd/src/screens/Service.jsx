@@ -19,8 +19,7 @@ const Service = () => {
       <NavBar />
       <div className="flex flex-col md:flex-row justify-start">
         <div className="md:w-[55%]">
-          <Map1 coordinates={coordinates} setPlaces={setPlaces} />
-          
+          <Map1 coordinates={coordinates} setPlaces={setPlaces} />   
         </div>
         <div className="md:w-[45%]">
           <PlacesList places={places} />
