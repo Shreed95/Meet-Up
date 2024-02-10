@@ -66,8 +66,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-300">
-      <div className="bg-white p-8 rounded shadow-md flex flex-col justify-center items-center w-96">
+    <div className="min-h-screen flex items-center justify-center bg-slate-200">
+      <div className="bg-white/20 rounded-lg shadow-md backdrop-blur-5 border border-white/30 p-8 rounded shadow-md flex flex-col justify-center items-center w-96">
         <img src={logo} alt="logo" className="w-14 text-center mb-6" />
         <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit} className='w-full'>
@@ -79,7 +79,7 @@ const SignUp = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:border-blue-500"
               required
             />
           </div>
@@ -91,7 +91,7 @@ const SignUp = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:border-blue-500"
               required
             />
           </div>
@@ -103,14 +103,14 @@ const SignUp = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-3xl focus:outline-none focus:border-blue-500"
               required
             />
           </div>
           {latitude !== 0 && longitude !== 0 ? (
             <button
               type="button"
-              className="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none focus:shadow-outline-blue"
+              className="w-full bg-green-500 text-white py-2 px-4 rounded-3xl hover:bg-green-600 focus:outline-none focus:shadow-outline-blue"
             >
               Location Fetched Successfully
             </button>
@@ -118,14 +118,14 @@ const SignUp = () => {
             <button
               type="button"
               onClick={getLocation}
-              className="w-full bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 focus:outline-none focus:shadow-outline-blue"
+              className="w-full bg-blue-500 text-white py-2 px-4 rounded-3xl hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
             >
               Get Location
             </button>
           )}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white mt-3 py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+            className="w-full bg-blue-500 text-white mt-3 py-2 px-4 rounded-3xl hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
           >
             Sign Up
           </button>
