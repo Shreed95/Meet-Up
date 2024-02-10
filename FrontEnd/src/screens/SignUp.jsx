@@ -67,13 +67,14 @@ const SignUp = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-200">
-      <div className="bg-white/20 rounded-lg shadow-md backdrop-blur-5 border border-white/30 p-8 rounded shadow-md flex flex-col justify-center items-center w-96">
+      <div className="bg-white/20 backdrop-blur-5 border border-white/30 p-8 rounded shadow-md flex flex-col justify-center items-center w-96">
         <img src={logo} alt="logo" className="w-14 text-center mb-6" />
         <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit} className='w-full'>
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Username</label>
             <input
+            placeholder='Enter Username'
               type="text"
               id="name"
               name="name"
@@ -86,6 +87,7 @@ const SignUp = () => {
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
             <input
+            placeholder='Enter Email'
               type="email"
               id="email"
               name="email"
@@ -98,6 +100,7 @@ const SignUp = () => {
           <div className="mb-6">
             <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">Password</label>
             <input
+            placeholder='Enter Password'
               type="password"
               id="password"
               name="password"
