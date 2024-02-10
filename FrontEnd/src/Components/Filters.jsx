@@ -16,11 +16,11 @@ function Filters() {
                         id="type"
                         value={typeState.type}
                         onChange={(e) => typeState.setType(e.target.value)}
-                        className="py-2 px-3 border border-gray-300 rounded-3xl w-full focus:outline-none focus:ring focus:border-blue-300"
+                        className="py-2 px-3 rounded-3xl w-full focus:outline-none focus:ring focus:border-blue-300"
                     >
-                        <option value="restaurants">Restaurants</option>
-                        <option value="hotels">Hotels</option>
-                        <option value="attractions">Attractions</option>
+                        <option className='p-3' value="restaurants">Restaurants</option>
+                        <option className='p-3' value="hotels">Hotels</option>
+                        <option className='p-3' value="attractions">Attractions</option>
                     </select>
                 </div>
 
@@ -42,7 +42,7 @@ function Filters() {
                 
                 
             </div>
-            <div className='bg-white w-full h-[1px] mt-8'></div>
+           
             <div className='flex justify-center items-center'>
                 <UpdateLocation />
             </div>

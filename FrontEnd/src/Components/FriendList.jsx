@@ -99,7 +99,7 @@ function FriendList() {
                 <div className="">
                     <table className="w-auto border border-gray-300 mt-5 mb-5">
                         <thead>
-                            <tr className='bg-yellow-200'>
+                            <tr className='bg-yellow-300'>
                                 <th className="py-2 px-4 sm:px-9 lg:px-16 border-b">Name</th>
                                 <th className="py-2 px-4 sm:px-9 lg:px-16 border-b">Address</th>
                             </tr>
