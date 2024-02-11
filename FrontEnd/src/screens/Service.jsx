@@ -5,7 +5,7 @@ import Map1 from '../Components/Map1';
 import { useCenter } from '../context/Center';
 
 const Service = () => {
-  const [places, setPlaces] = useState([]);
+  const [places, setPlaces] = useState(null);
   const [coordinates,setCoordinates] = useState({ lng:73.9123321, lat:18.5667409 });
 
   const centerState = useCenter();
