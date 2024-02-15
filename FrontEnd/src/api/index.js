@@ -39,3 +39,15 @@ export const getAddress = async (lng, lat) => {
     console.error("Error fetching data from Mapbox API:", error);
   }
 };
+
+export const getPlacesName = async (search_text) => {
+  const accessToken = process.env.REACT_APP_MAPBOX_KEY;
+  const apiUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${search_text}.json?country=in&fuzzyMatch=true&routing=false&limit=3&proximity=ip&types=locality&language=en&autocomplete=true&access_token=${accessToken}`;
+  try {
+    const response = await axios.get(apiUrl);
+    const placeName = response.data.features;
+    return placeName;
+  } catch (error) {
+    console.error("Error fetching data from Mapbox API:", error);
+  }
+};

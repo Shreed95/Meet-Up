@@ -1,57 +1,69 @@
-import React, { useState } from 'react';
-import { useCenter } from '../context/Center';
-
+import React, { useState, useEffect } from 'react';
+import { getPlacesName } from '../api/index';
+import { useSearch } from '../context/SearchPlace';
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
   const [suggestionsVisible, setSuggestionsVisible] = useState(false);
-  const centerState = useCenter();
+  const searchState = useSearch();
 
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
-    if (value === "Camp, Pune") {
-      centerState.setCenter({ lng: 18.499, lat: 73.8957 });
-    } else if (value === "Gandhinagar, Gujurat") {
-      centerState.setCenter({ lng: 23.2156, lat: 72.6369 });
-    } else if (value === "Delhi, India") {
-      centerState.setCenter({ lng: 28.7041, lat: 77.1025 });
-    }
-  };
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      if (searchTerm.trim() !== '') {
+        try {
+          const suggestions = await getPlacesName(searchTerm);
+          setSuggestions(suggestions);
+          setSuggestionsVisible(true);
+        } catch (error) {
+          console.error('Error fetching suggestions:', error);
+        }
+      } else {
+        setSuggestions([]);
+        setSuggestionsVisible(false);
+      }
+    };
 
-  const handleSearchClick = () => {
-    setSuggestionsVisible(!suggestionsVisible);
+    fetchSuggestions();
+
+    return () => {
+      setSuggestions([]);
+      setSuggestionsVisible(false);
+    };
+  }, [searchTerm]);
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
   };
 
   const handleSuggestionClick = (suggestion) => {
-    setSearchTerm(suggestion);
+    setSearchTerm(suggestion.place_name);
+    searchState.setSearchPlace(suggestion.geometry.coordinates);
     setSuggestionsVisible(false);
   };
 
-  const suggestions = ['Camp, Pune', 'Gandhinagar, Gujurat', 'Delhi, India'];
-
   return (
-    <div className="relative flex flex-col justify-center">
-      <div className='my-6 text-center text-xl'>Search Places <span className='text-md text-gray-300'>(Future Implementation)</span></div>
+    <div className="relative flex flex-col justify-center w-72">
+      <div className='block text-sm font-medium text-black mb-1'>Search Places</div>
       <input
         type="text"
         className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
         placeholder="Search..."
         value={searchTerm}
         onChange={handleInputChange}
-        onClick={handleSearchClick}
       />
       {suggestionsVisible && (
-        <ul className="absolute z-10 bg-white border border-gray-300 rounded-md mt-60 w-52">
-          {suggestions.map((suggestion, index) => (
-            <li
-              key={index}
-              className="px-4 py-2 cursor-pointer hover:bg-gray-100"
-              onClick={() => handleSuggestionClick(suggestion)}
-            >
-              {suggestion}
-            </li>
-          ))}
-        </ul>
+        <ul className="absolute z-10 bg-white border border-gray-300 rounded-md mt-[350px] w-72">
+        {suggestions.map((suggestion, index) => (
+          <li
+            key={index}
+            className="px-4 py-2 cursor-pointer text-black hover:bg-gray-100"
+            onClick={() => handleSuggestionClick(suggestion)}
+          >
+            <p className='text-md font-bold'>{suggestion.text_en}</p>
+            <p className='text-sm text-gray-500'>{suggestion.place_name_en}</p>
+          </li>
+        ))}
+      </ul>
       )}
     </div>
   );

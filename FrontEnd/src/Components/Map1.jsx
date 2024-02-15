@@ -99,7 +99,7 @@ const Map = ({ coordinates, setPlaces }) => {
 
     return (
         <div style={{ position: 'relative' }} className='p-8'>
-            <div className='bg-[#E0CCBE]  bg-opacity-50 text-gray-700 p-4 font-mono z-10 absolute left-0 m-6  rounded-md w-auto md:w-[400px] font-bold'>
+            <div className='bg-[#E0CCBE]  bg-opacity-50 text-gray-700 p-4 font-mono z-10 absolute left-2 m-10 rounded-md w-auto md:w-[400px] font-bold'>
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
             </div>
             <div className='md:h-screen h-[370px] ' style={{ position: 'relative' }} ref={mapContainerRef}>
