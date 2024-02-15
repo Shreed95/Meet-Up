@@ -22,6 +22,7 @@ Users can easily create friend groups by inputting their respective locations. T
 
 Map APIs - Mapbox GL
 https://docs.mapbox.com/api/overview/
+
 Places APIs - Rapid APIs Travel advior
 https://rapidapi.com/apidojo/api/travel-advisor
 
