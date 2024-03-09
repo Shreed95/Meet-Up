@@ -16,7 +16,7 @@ function FriendList() {
             const initialUser = JSON.parse(localStorage.getItem('user')).name;
             if (initialUser) {
                 try {
-                    const response = await fetch("http://localhost:5000/api/displaylocation", {
+                    const response = await fetch("https://meet-up-server.vercel.app/api/displaylocation", {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function FriendList() {
     useEffect(() => {
         const fetchLocation = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/displaylocation", {
+                const response = await fetch("https://meet-up-server.vercel.app/api/displaylocation", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

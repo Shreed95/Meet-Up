@@ -8,7 +8,7 @@ const SearchBar = ({ setonSelect }) => {
 
     const fetchName = async (value) => {
         try {
-            const response = await fetch("http://localhost:5000/api/search", {
+            const response = await fetch("https://meet-up-server.vercel.app/api/search", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

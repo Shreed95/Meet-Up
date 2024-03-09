@@ -27,7 +27,7 @@ function UpdateLocation() {
     const updateLocation = async () => {
         try {
             const { latitude, longitude } = await getLocation();
-            const response = await fetch("http://localhost:5000/api/updatelocation", {
+            const response = await fetch("https://meet-up-server.vercel.app/api/updatelocation", {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

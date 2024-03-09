@@ -4,7 +4,7 @@ export const getPlacesData1 = async (category, lat, lng, radius) => {
   try {
     const accessToken = process.env.REACT_APP_GEOAPIFY_KEY;
     const response = await fetch(
-      `https://api.geoapify.com/v2/places?categories=${category}&filter=circle:${lng},${lat},${radius}&bias=proximity:${lng},${lat}&lang=en&limit=3&apiKey=${accessToken}`
+      `https://api.geoapify.com/v2/places?categories=${category}&filter=circle:${lng},${lat},${radius}&bias=proximity:${lng},${lat}&lang=en&limit=12&apiKey=${accessToken}`
     );
     const data = await response.json();
     return data.features;
