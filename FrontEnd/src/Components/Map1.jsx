@@ -1,30 +1,24 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useList } from '../context/List';
 import { useType } from '../context/Type';
-import { useRating } from '../context/Rating';
 import mapboxgl from 'mapbox-gl';
-import temp from '../Images/temp.png';
-import { getPlacesData } from '../api/index';
+import { getPlacesData1 } from '../api/index';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_KEY;
 
 const Map = ({ coordinates, setPlaces }) => {
     const mapContainerRef = useRef(null);
-    const [lng, setLng] = useState(coordinates.lng);
-    const [lat, setLat] = useState(coordinates.lat);
-    const [zoom, setZoom] = useState(15);
     const listState = useList();
     const typeState = useType();
-    const ratingState = useRating();
 
-    let data = null;
+    let data = [];
 
     useEffect(() => {
         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [coordinates.lng, coordinates.lat],
-            zoom: 15
+            zoom: 13
         });
         new mapboxgl.Marker({ color: '#FFD700' }).setLngLat([coordinates.lng, coordinates.lat]).addTo(map);
 
@@ -44,11 +38,7 @@ const Map = ({ coordinates, setPlaces }) => {
         map.on('load', async () => {
             const updateDataAndMarkers = async () => {
                 try {
-                    data = await getPlacesData(typeState.type, map.getBounds()._sw, map.getBounds()._ne);
-                    if(ratingState.rating!==''){
-                        const filteredPlaces = data.filter((place)=>place.rating>ratingState.rating)
-                        data=filteredPlaces;
-                    }
+                    data = await getPlacesData1(typeState.type, coordinates.lat, coordinates.lng, 5000);
                     setPlaces(data);
                 } catch (error) {
                     console.error('Error fetching data:', error);
@@ -57,24 +47,15 @@ const Map = ({ coordinates, setPlaces }) => {
                 const addMarkers = () => {
                     if (data) {
                         data.forEach((place) => {
-                            if (
-                                place &&
-                                place.longitude !== undefined &&
-                                place.latitude !== undefined &&
-                                !isNaN(place.longitude) &&
-                                !isNaN(place.latitude)
-                            ) {
-                                const popupContent = `<div><h1>${place.name}</h1><img
-                                src=${place.photo ? place.photo.images.large.url : temp}
-                                alt={place.name}
-                              /></div>`;
+                            if (place) {
+                                const popupContent = `<div><h1>${place.properties.name}</h1></div>`;
                                 const popup = new mapboxgl.Popup({ offset: 25 })
                                     .setHTML(popupContent)
                                     .setMaxWidth("100px");
                                 new mapboxgl.Marker({
                                     color: "#0000FF"
                                 })
-                                    .setLngLat([Number(place.longitude), Number(place.latitude)])
+                                    .setLngLat(place.geometry.coordinates)
                                     .setPopup(popup)
                                     .addTo(map);
                             }
@@ -88,22 +69,13 @@ const Map = ({ coordinates, setPlaces }) => {
 
         map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
-        map.on('move', () => {
-            setLng(map.getCenter().lng.toFixed(4));
-            setLat(map.getCenter().lat.toFixed(4));
-            setZoom(map.getZoom().toFixed(0));
-        });
-
         return () => map.remove();
     }, [coordinates]);
 
     return (
-        <div style={{ position: 'relative' }} className='p-8'>
-            <div className='bg-[#E0CCBE]  bg-opacity-50 text-gray-700 p-4 font-mono z-10 absolute left-2 m-10 rounded-md w-auto md:w-[400px] font-bold'>
-                Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-            </div>
-            <div className='md:h-screen h-[370px] ' style={{ position: 'relative' }} ref={mapContainerRef}>
-                <div className='bg-gray-400 bg-opacity-50 font-mono z-10 absolute bottom-0 right-0 m-2 mb-16 rounded-md w-auto'>
+        <div style={{ position: 'relative' }} className='p-4 bg-slate-900'>
+            <div className='md:h-screen h-[370px] rounded-md' style={{ position: 'relative' }} ref={mapContainerRef}>
+                <div className='bg-gray-300 bg-opacity-50 font-mono z-10 absolute bottom-0 right-0 m-2 mb-16 rounded-md w-auto'>
                     <ul className="w-auto p-0 md:p-2 text-gray-700 font-bold text-sm md:text-lg">
                         <li className="flex items-center">
                             <div className="w-4 h-4 mr-2 bg-[#FFD700] rounded-full"></div>

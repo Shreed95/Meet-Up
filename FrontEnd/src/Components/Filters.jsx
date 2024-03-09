@@ -1,11 +1,9 @@
 import React from 'react';
 import { useType } from '../context/Type';
-import { useRating } from '../context/Rating';
 import UpdateLocation from './UpdateLocation';
 import SearchPlace from './SearchPlace';
 function Filters() {
     const typeState = useType();
-    const ratingState = useRating();
 
     return (
         <div>
@@ -19,26 +17,14 @@ function Filters() {
                         onChange={(e) => typeState.setType(e.target.value)}
                         className="py-2 px-3 rounded-md w-full focus:outline-none focus:ring focus:border-blue-200"
                     >
-                        <option className='p-3' value="restaurants">Restaurants</option>
-                        <option className='p-3' value="hotels">Hotels</option>
-                        <option className='p-3' value="attractions">Attractions</option>
+                        <option className='px-3 py-5' value="catering">Restaurants/Cafes/Bars/Pubs</option>
+                        <option className='px-3 py-5' value="accommodation">Hotels/Guest House/Motels</option>
+                        <option className='px-3 py-5' value="entertainment">Attractions</option>
+                        <option className='px-3 py-5' value="leisure">Picnic/Playgrounds/Park</option>
+                        <option className='px-3 py-5' value="tourism">Tourist Attractions</option>
+                        <option className='px-3 py-5' value="religion">Religious Places</option>
+                        <option className='px-3 py-5' value="sport">Sport Center/Track/Stadiums</option>
                     </select>
-                </div>
-
-                <div className="w-72 mr-0 md:mr-10">
-                    <label htmlFor="rating" className="block text-sm font-medium text-black mb-1">Rating</label>
-                    <select
-                        id="rating"
-                        value={ratingState.rating}
-                        onChange={(e) => ratingState.setRating(e.target.value)}
-                        className="py-2 px-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                    >
-                        <option value="">All</option>
-                        <option value="3">Above 3.0</option>
-                        <option value="4">Above 4.0</option>
-                        <option value="4.5">Above 4.5</option>
-                    </select>
-                    
                 </div>
                 <SearchPlace />
             </div>

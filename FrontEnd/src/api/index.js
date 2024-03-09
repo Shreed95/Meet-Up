@@ -1,29 +1,15 @@
 import axios from "axios";
 
-export const getPlacesData = async (type, sw, ne) => {
+export const getPlacesData1 = async (category, lat, lng, radius) => {
   try {
-    const {
-      data: { data },
-    } = await axios.get(
-      `https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`,
-      {
-        method: "GET",
-        url: URL,
-        params: {
-          bl_latitude: sw.lat,
-          tr_latitude: ne.lat,
-          bl_longitude: sw.lng,
-          tr_longitude: ne.lng,
-        },
-        headers: {
-          "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
-          "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
-        },
-      }
+    const accessToken = process.env.REACT_APP_GEOAPIFY_KEY;
+    const response = await fetch(
+      `https://api.geoapify.com/v2/places?categories=${category}&filter=circle:${lng},${lat},${radius}&bias=proximity:${lng},${lat}&lang=en&limit=3&apiKey=${accessToken}`
     );
-    return data;
+    const data = await response.json();
+    return data.features;
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching data:", error);
   }
 };
 

@@ -7,7 +7,6 @@ import { useCenter } from '../context/Center';
 const Service = () => {
   const [places, setPlaces] = useState(null);
   const [coordinates,setCoordinates] = useState({ lng:73.9123321, lat:18.5667409 });
-
   const centerState = useCenter();
 
   useEffect(() => {
@@ -18,10 +17,10 @@ const Service = () => {
     <>
       <NavBar />
       <div className="flex flex-col md:flex-row justify-start">
-        <div className="md:w-[55%]">
+        <div className="md:w-[65%]">
           <Map1 coordinates={coordinates} setPlaces={setPlaces} />   
         </div>
-        <div className="md:w-[45%]">
+        <div className="md:w-[35%]">
           <PlacesList places={places} />
         </div>
       </div>

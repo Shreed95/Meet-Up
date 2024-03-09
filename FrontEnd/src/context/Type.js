@@ -8,7 +8,7 @@ export const useType = () =>{
 }
 
 export const TypeProvider = (props) =>{
-    const [type,setType] = useState('restaurants');
+    const [type,setType] = useState('catering');
     return(
         <TypeContext.Provider value={{type, setType}}>
             {props.children}

@@ -9,7 +9,9 @@ function UpdateLocation() {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     if (position && position.coords) {
-                        const { latitude, longitude } = position.coords;
+                        console.log(position)
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
                         resolve({ latitude, longitude });
                     } else {
                         reject(new Error('Could not get location coordinates.'));
@@ -25,7 +27,6 @@ function UpdateLocation() {
     const updateLocation = async () => {
         try {
             const { latitude, longitude } = await getLocation();
-
             const response = await fetch("http://localhost:5000/api/updatelocation", {
                 method: 'PUT',
                 headers: {
@@ -42,8 +43,8 @@ function UpdateLocation() {
             if (!response.ok) {
                 throw new Error(`Update location failed: ${response.statusText}`);
             }
-            else{
-                
+            else {
+
                 setAns(true);
             }
         } catch (error) {

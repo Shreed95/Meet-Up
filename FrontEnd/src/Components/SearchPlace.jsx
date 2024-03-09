@@ -52,7 +52,7 @@ const SearchBar = () => {
         onChange={handleInputChange}
       />
       {suggestionsVisible && (
-        <ul className="absolute z-10 bg-white border border-gray-300 rounded-md mt-[350px] w-72">
+        <ul className="absolute z-10 bg-white border border-gray-300 rounded-md top-16 w-72">
         {suggestions.map((suggestion, index) => (
           <li
             key={index}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../Components/NavBar';
 import FriendList from '../Components/FriendList';
@@ -54,7 +54,7 @@ const Home = () => {
     return (
         <>
             <Nav />
-            <div className='' style={{ backgroundImage: "url('https://i.postimg.cc/qB2F2VKh/back-new.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover' }} >
+            <div className='' style={{ backgroundImage: "url('https://i.postimg.cc/qB2F2VKh/back-new.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
                 <div className=' flex flex-col md:flex-col justify-center items-center'>
                     <div className="w-full mt-16">
                         <Filters />
